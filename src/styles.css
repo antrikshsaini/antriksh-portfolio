@@ -41,21 +41,21 @@
   /* Deep SOC console palette */
   --background: oklch(0.16 0.02 250);
   --foreground: oklch(0.96 0.01 180);
-  --card: oklch(0.20 0.025 250);
+  --card: oklch(0.2 0.025 250);
   --card-foreground: oklch(0.96 0.01 180);
-  --popover: oklch(0.20 0.025 250);
+  --popover: oklch(0.2 0.025 250);
   --popover-foreground: oklch(0.96 0.01 180);
-  --primary: oklch(0.85 0.22 145);          /* neon green */
+  --primary: oklch(0.85 0.22 145); /* neon green */
   --primary-foreground: oklch(0.15 0.02 250);
   --secondary: oklch(0.24 0.03 250);
   --secondary-foreground: oklch(0.96 0.01 180);
   --muted: oklch(0.22 0.025 250);
   --muted-foreground: oklch(0.68 0.03 220);
-  --accent: oklch(0.80 0.18 210);           /* cyan */
+  --accent: oklch(0.8 0.18 210); /* cyan */
   --accent-foreground: oklch(0.15 0.02 250);
   --destructive: oklch(0.65 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.30 0.03 230 / 0.6);
+  --border: oklch(0.3 0.03 230 / 0.6);
   --input: oklch(0.28 0.03 230);
   --ring: oklch(0.85 0.22 145);
 
@@ -64,19 +64,24 @@
   --amber: oklch(0.85 0.16 80);
   --danger: oklch(0.68 0.25 25);
 
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.25 0.08 220 / 0.5), transparent 60%),
-                   radial-gradient(ellipse at bottom right, oklch(0.30 0.12 145 / 0.25), transparent 60%);
+  --gradient-hero:
+    radial-gradient(ellipse at top, oklch(0.25 0.08 220 / 0.5), transparent 60%),
+    radial-gradient(ellipse at bottom right, oklch(0.3 0.12 145 / 0.25), transparent 60%);
   --gradient-text: linear-gradient(135deg, var(--neon), var(--cyan));
   --shadow-glow-neon: 0 0 24px oklch(0.85 0.22 145 / 0.45), 0 0 60px oklch(0.85 0.22 145 / 0.18);
   --shadow-glow-cyan: 0 0 20px oklch(0.82 0.16 210 / 0.35);
   --shadow-card: 0 1px 0 oklch(1 0 0 / 0.04) inset, 0 30px 60px -30px oklch(0 0 0 / 0.6);
 
-  --grid-color: oklch(0.30 0.03 230 / 0.25);
+  --grid-color: oklch(0.3 0.03 230 / 0.25);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -87,20 +92,31 @@
     background-size: 56px 56px;
     background-attachment: fixed;
   }
-  ::selection { background: var(--neon); color: var(--primary-foreground); }
+  ::selection {
+    background: var(--neon);
+    color: var(--primary-foreground);
+  }
 }
 
 @layer utilities {
-  .font-mono { font-family: var(--font-mono); }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  .glow-neon { box-shadow: var(--shadow-glow-neon); }
-  .glow-cyan { box-shadow: var(--shadow-glow-cyan); }
-  .bg-hero { background-image: var(--gradient-hero); }
+  .glow-neon {
+    box-shadow: var(--shadow-glow-neon);
+  }
+  .glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+  .bg-hero {
+    background-image: var(--gradient-hero);
+  }
   .card-soc {
     background: linear-gradient(180deg, oklch(0.22 0.03 250 / 0.7), oklch(0.18 0.025 250 / 0.7));
     border: 1px solid var(--color-border);
@@ -110,7 +126,8 @@
   }
   .scanline::before {
     content: "";
-    position: absolute; inset: 0;
+    position: absolute;
+    inset: 0;
     background: repeating-linear-gradient(
       to bottom,
       transparent 0,
@@ -128,23 +145,204 @@
     margin-left: 2px;
   }
   .pulse-dot {
-    width: 8px; height: 8px; border-radius: 9999px;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
     background: var(--neon);
     box-shadow: 0 0 0 0 var(--neon);
     animation: pulse 2s infinite;
   }
 }
 
-@keyframes blink { 50% { opacity: 0; } }
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 oklch(0.85 0.22 145 / 0.7); }
-  70% { box-shadow: 0 0 0 12px oklch(0.85 0.22 145 / 0); }
-  100% { box-shadow: 0 0 0 0 oklch(0.85 0.22 145 / 0); }
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.85 0.22 145 / 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px oklch(0.85 0.22 145 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.85 0.22 145 / 0);
+  }
 }
-@keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-.float-y { animation: float-y 6s ease-in-out infinite; }
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
 @keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.ticker-track { animation: ticker 40s linear infinite; }
+.ticker-track {
+  animation: ticker 40s linear infinite;
+}
+
+/* Markdown rendering for study notes — matches SOC console theme */
+.prose-soc {
+  color: var(--color-foreground);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.prose-soc h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.prose-soc h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--neon);
+  font-family: var(--font-mono);
+}
+.prose-soc h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+  color: var(--cyan);
+}
+.prose-soc h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-foreground);
+}
+.prose-soc p {
+  margin: 0.75rem 0;
+  color: var(--color-muted-foreground);
+}
+.prose-soc strong {
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+.prose-soc em {
+  color: var(--color-foreground);
+}
+.prose-soc a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-soc a:hover {
+  color: var(--neon);
+}
+.prose-soc ul,
+.prose-soc ol {
+  margin: 0.75rem 0 0.75rem 1.25rem;
+  color: var(--color-muted-foreground);
+}
+.prose-soc ul {
+  list-style: none;
+  padding-left: 0;
+}
+.prose-soc ul > li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin: 0.4rem 0;
+}
+.prose-soc ul > li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--neon);
+}
+.prose-soc ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+.prose-soc ol > li {
+  margin: 0.4rem 0;
+  padding-left: 0.25rem;
+}
+.prose-soc ol > li::marker {
+  color: var(--neon);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.prose-soc code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: oklch(0.3 0.03 230 / 0.4);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  color: var(--cyan);
+}
+.prose-soc pre {
+  background: oklch(0.14 0.02 250);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.prose-soc pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--color-foreground);
+}
+.prose-soc blockquote {
+  border-left: 3px solid var(--neon);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin: 1rem 0;
+  color: var(--color-muted-foreground);
+  background: oklch(0.85 0.22 145 / 0.04);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.prose-soc hr {
+  border: 0;
+  border-top: 1px dashed var(--color-border);
+  margin: 2rem 0;
+}
+.prose-soc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.prose-soc th,
+.prose-soc td {
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+.prose-soc th {
+  background: oklch(0.24 0.03 250);
+  color: var(--color-foreground);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.prose-soc td {
+  color: var(--color-muted-foreground);
+}
+.prose-soc tr:nth-child(even) td {
+  background: oklch(0.2 0.025 250 / 0.4);
+}

@@ -1,18 +1,41 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
-  Shield, Terminal, Activity, Mail, Phone, Linkedin, Globe,
-  Radar, Bug, Network, Server, Lock, Cpu, FileSearch, Cloud,
-  AlertTriangle, CheckCircle2, ArrowUpRight, ChevronRight,
+  Shield,
+  Terminal,
+  Activity,
+  Mail,
+  Phone,
+  Linkedin,
+  Globe,
+  Radar,
+  Bug,
+  Network,
+  Server,
+  Lock,
+  Cpu,
+  FileSearch,
+  Cloud,
+  AlertTriangle,
+  CheckCircle2,
+  ArrowUpRight,
+  ChevronRight,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Antriksh Saini — SOC Analyst & Cybersecurity Engineer" },
-      { name: "description", content: "Threat-focused SOC Analyst specializing in Splunk ES, CrowdStrike Falcon, and Cortex XSOAR. 3+ years across security operations and network administration." },
+      {
+        name: "description",
+        content:
+          "Threat-focused SOC Analyst specializing in Splunk ES, CrowdStrike Falcon, and Cortex XSOAR. 3+ years across security operations and network administration.",
+      },
       { property: "og:title", content: "Antriksh Saini — SOC Analyst" },
-      { property: "og:description", content: "SIEM, EDR, SOAR. Real-time detection, triage, and response." },
+      {
+        property: "og:description",
+        content: "SIEM, EDR, SOAR. Real-time detection, triage, and response.",
+      },
     ],
   }),
   component: Index,
@@ -26,16 +49,56 @@ const stats = [
 ];
 
 const skills = [
-  { icon: Radar, title: "SIEM", body: "Splunk Enterprise & ES — SPL, Correlation Searches, Indexer, Search Head, Heavy Forwarder, Deployment Server, apps & add-ons." },
-  { icon: Shield, title: "EDR / SOAR", body: "CrowdStrike Falcon agent lifecycle, policy & host admin. Palo Alto Cortex XSOAR playbook triage, automation, MTTD/MTTR dashboards." },
-  { icon: FileSearch, title: "Threat Intel", body: "CISCO Talos, VirusTotal, IBM X-Force, MxToolbox — domain/IP/file reputation, phishing investigation." },
-  { icon: AlertTriangle, title: "Incident Response", body: "True/false positive analysis, escalation workflows, ServiceNow ticketing, sandbox analysis, Pyramid of Pain." },
-  { icon: Network, title: "Networking", body: "OSI, TCP/IP, DNS, DHCP, LAN/WAN, VPN, VoIP, Cisco Routers/Switches/ASA, Wireshark, IDS/IPS." },
-  { icon: Server, title: "Windows Server", body: "AD DS, GPO, DHCP, WDS, WSUS, IIS, FTP, Failover Clustering, MDT 2012–2022." },
-  { icon: Terminal, title: "Linux / OS", body: "Ubuntu, Kali, Parrot · Apache2, VSFTPD, SAMBA, MySQL, DNS, Radius." },
-  { icon: Lock, title: "Compliance", body: "Policy adherence, regulatory alignment, contractual security clause review (RFPs, MSAs), audit support." },
-  { icon: Bug, title: "Pen Testing", body: "Vulnerability & port scanning, Wi-Fi analysis, DB password salting, basic exploitation via Kali tooling." },
-  { icon: Cloud, title: "Virtualization", body: "VMware ESXi / Workstation / vCenter, Microsoft Azure." },
+  {
+    icon: Radar,
+    title: "SIEM",
+    body: "Splunk Enterprise & ES — SPL, Correlation Searches, Indexer, Search Head, Heavy Forwarder, Deployment Server, apps & add-ons.",
+  },
+  {
+    icon: Shield,
+    title: "EDR / SOAR",
+    body: "CrowdStrike Falcon agent lifecycle, policy & host admin. Palo Alto Cortex XSOAR playbook triage, automation, MTTD/MTTR dashboards.",
+  },
+  {
+    icon: FileSearch,
+    title: "Threat Intel",
+    body: "CISCO Talos, VirusTotal, IBM X-Force, MxToolbox — domain/IP/file reputation, phishing investigation.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Incident Response",
+    body: "True/false positive analysis, escalation workflows, ServiceNow ticketing, sandbox analysis, Pyramid of Pain.",
+  },
+  {
+    icon: Network,
+    title: "Networking",
+    body: "OSI, TCP/IP, DNS, DHCP, LAN/WAN, VPN, VoIP, Cisco Routers/Switches/ASA, Wireshark, IDS/IPS.",
+  },
+  {
+    icon: Server,
+    title: "Windows Server",
+    body: "AD DS, GPO, DHCP, WDS, WSUS, IIS, FTP, Failover Clustering, MDT 2012–2022.",
+  },
+  {
+    icon: Terminal,
+    title: "Linux / OS",
+    body: "Ubuntu, Kali, Parrot · Apache2, VSFTPD, SAMBA, MySQL, DNS, Radius.",
+  },
+  {
+    icon: Lock,
+    title: "Compliance",
+    body: "Policy adherence, regulatory alignment, contractual security clause review (RFPs, MSAs), audit support.",
+  },
+  {
+    icon: Bug,
+    title: "Pen Testing",
+    body: "Vulnerability & port scanning, Wi-Fi analysis, DB password salting, basic exploitation via Kali tooling.",
+  },
+  {
+    icon: Cloud,
+    title: "Virtualization",
+    body: "VMware ESXi / Workstation / vCenter, Microsoft Azure.",
+  },
 ];
 
 const experience = [
@@ -88,10 +151,22 @@ const certifications = [
 ];
 
 const tickerItems = [
-  "SIEM • Splunk ES", "EDR • CrowdStrike Falcon", "SOAR • Cortex XSOAR",
-  "Threat Intel • Talos", "VirusTotal", "IBM X-Force", "MxToolbox",
-  "ServiceNow", "Wireshark", "Cisco ASA", "Active Directory", "VMware ESXi",
-  "MITRE ATT&CK", "Pyramid of Pain", "OSINT", "Kali Linux",
+  "SIEM • Splunk ES",
+  "EDR • CrowdStrike Falcon",
+  "SOAR • Cortex XSOAR",
+  "Threat Intel • Talos",
+  "VirusTotal",
+  "IBM X-Force",
+  "MxToolbox",
+  "ServiceNow",
+  "Wireshark",
+  "Cisco ASA",
+  "Active Directory",
+  "VMware ESXi",
+  "MITRE ATT&CK",
+  "Pyramid of Pain",
+  "OSINT",
+  "Kali Linux",
 ];
 
 function Index() {
@@ -116,11 +191,24 @@ function Index() {
             <span className="blink" />
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm font-mono text-muted-foreground">
-            <a href="#about" className="hover:text-primary transition-colors">./about</a>
-            <a href="#stack" className="hover:text-primary transition-colors">./stack</a>
-            <a href="#experience" className="hover:text-primary transition-colors">./experience</a>
-            <a href="#certs" className="hover:text-primary transition-colors">./certs</a>
-            <a href="#contact" className="hover:text-primary transition-colors">./contact</a>
+            <a href="#about" className="hover:text-primary transition-colors">
+              ./about
+            </a>
+            <a href="#stack" className="hover:text-primary transition-colors">
+              ./stack
+            </a>
+            <a href="#experience" className="hover:text-primary transition-colors">
+              ./experience
+            </a>
+            <a href="#certs" className="hover:text-primary transition-colors">
+              ./certs
+            </a>
+            <Link to="/learn" className="hover:text-primary transition-colors">
+              ./learn
+            </Link>
+            <a href="#contact" className="hover:text-primary transition-colors">
+              ./contact
+            </a>
           </nav>
           <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-muted-foreground">
             <span className="pulse-dot" /> SOC ONLINE · {time}
@@ -139,9 +227,10 @@ function Index() {
           <span className="text-gradient">before they hunt back.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-          I'm <span className="text-foreground font-medium">Antriksh Saini</span> — a SOC Analyst with 3+ years across
-          security operations and network administration. I run Splunk ES, CrowdStrike Falcon, and
-          Cortex XSOAR playbooks to detect, triage, and contain incidents — fast.
+          I'm <span className="text-foreground font-medium">Antriksh Saini</span> — a SOC Analyst
+          with 3+ years across security operations and network administration. I run Splunk ES,
+          CrowdStrike Falcon, and Cortex XSOAR playbooks to detect, triage, and contain incidents —
+          fast.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -168,16 +257,36 @@ function Index() {
               <span className="size-2.5 rounded-full bg-amber/80" />
               <span className="size-2.5 rounded-full bg-primary/80" />
             </div>
-            <span className="font-mono text-xs text-muted-foreground">soc@iatek ~ /var/log/alerts.live</span>
+            <span className="font-mono text-xs text-muted-foreground">
+              soc@iatek ~ /var/log/alerts.live
+            </span>
             <span className="font-mono text-xs text-primary hidden sm:block">● live</span>
           </div>
           <div className="p-6 font-mono text-sm leading-relaxed">
-            <p><span className="text-muted-foreground">$</span> <span className="text-accent">splunk</span> search "index=main sourcetype=phishing severity=high"</p>
-            <p className="text-muted-foreground mt-1">[+] 3 events matched · enriching with VirusTotal, Talos, X-Force…</p>
-            <p className="mt-3"><span className="text-amber">▲</span> <span className="text-foreground">alert</span> · suspicious_attachment.docm from finance-impersonation@…</p>
-            <p><span className="text-amber">▲</span> <span className="text-foreground">alert</span> · outbound beacon to known C2 ASN — Falcon containment armed</p>
-            <p><span className="text-primary">✓</span> <span className="text-foreground">xsoar</span> playbook <span className="text-accent">phishing-triage-v3</span> executed · ticket INC-48211 opened</p>
-            <p className="mt-3"><span className="text-muted-foreground">$</span> <span className="blink" /></p>
+            <p>
+              <span className="text-muted-foreground">$</span>{" "}
+              <span className="text-accent">splunk</span> search "index=main sourcetype=phishing
+              severity=high"
+            </p>
+            <p className="text-muted-foreground mt-1">
+              [+] 3 events matched · enriching with VirusTotal, Talos, X-Force…
+            </p>
+            <p className="mt-3">
+              <span className="text-amber">▲</span> <span className="text-foreground">alert</span> ·
+              suspicious_attachment.docm from finance-impersonation@…
+            </p>
+            <p>
+              <span className="text-amber">▲</span> <span className="text-foreground">alert</span> ·
+              outbound beacon to known C2 ASN — Falcon containment armed
+            </p>
+            <p>
+              <span className="text-primary">✓</span> <span className="text-foreground">xsoar</span>{" "}
+              playbook <span className="text-accent">phishing-triage-v3</span> executed · ticket
+              INC-48211 opened
+            </p>
+            <p className="mt-3">
+              <span className="text-muted-foreground">$</span> <span className="blink" />
+            </p>
           </div>
         </div>
 
@@ -185,7 +294,9 @@ function Index() {
         <dl className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((s) => (
             <div key={s.label} className="card-soc p-5">
-              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{s.label}</dt>
+              <dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                {s.label}
+              </dt>
               <dd className="mt-2 text-3xl font-semibold text-gradient">{s.value}</dd>
               <p className="mt-1 text-xs text-muted-foreground">{s.hint}</p>
             </div>
@@ -213,19 +324,29 @@ function Index() {
         </div>
         <div className="md:col-span-2 space-y-5 text-muted-foreground text-lg leading-relaxed">
           <p>
-            Threat-focused SOC Analyst with a network administrator's foundation. I move fluently between
-            <span className="text-foreground"> SIEM dashboards, EDR consoles, and the packet level</span> — which lets me
-            correlate signals other people miss.
+            Threat-focused SOC Analyst with a network administrator's foundation. I move fluently
+            between
+            <span className="text-foreground">
+              {" "}
+              SIEM dashboards, EDR consoles, and the packet level
+            </span>{" "}
+            — which lets me correlate signals other people miss.
           </p>
           <p>
-            My day is shaped by <span className="text-foreground">Splunk ES correlation searches, Cortex XSOAR playbooks,
-            and CrowdStrike Falcon</span>. I triage phishing, malware, and insider-threat alerts, validate automation as a
+            My day is shaped by{" "}
+            <span className="text-foreground">
+              Splunk ES correlation searches, Cortex XSOAR playbooks, and CrowdStrike Falcon
+            </span>
+            . I triage phishing, malware, and insider-threat alerts, validate automation as a
             human-in-the-loop, and feed lessons learned back into detection logic.
           </p>
           <p>
-            Cross-domain experience in <span className="text-foreground">Cisco networking, Windows/Linux server admin,
-            and VMware</span> means I can investigate an incident end-to-end and recommend containment that actually fits
-            the environment.
+            Cross-domain experience in{" "}
+            <span className="text-foreground">
+              Cisco networking, Windows/Linux server admin, and VMware
+            </span>{" "}
+            means I can investigate an incident end-to-end and recommend containment that actually
+            fits the environment.
           </p>
         </div>
       </section>
@@ -237,18 +358,25 @@ function Index() {
             <p className="font-mono text-xs text-primary">// 02 — capability matrix</p>
             <h2 className="mt-2 text-3xl md:text-4xl font-semibold">The stack I run on</h2>
           </div>
-          <p className="font-mono text-xs text-muted-foreground">{skills.length} modules · all green</p>
+          <p className="font-mono text-xs text-muted-foreground">
+            {skills.length} modules · all green
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skills.map((s) => (
-            <article key={s.title} className="card-soc p-6 group hover:border-primary/60 transition-colors">
+            <article
+              key={s.title}
+              className="card-soc p-6 group hover:border-primary/60 transition-colors"
+            >
               <div className="flex items-center justify-between">
                 <div className="size-10 rounded-md bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:glow-neon transition-shadow">
                   <s.icon className="size-5" />
                 </div>
                 <CheckCircle2 className="size-4 text-primary/70" />
               </div>
-              <h3 className="mt-4 font-mono text-sm uppercase tracking-wider text-foreground">{s.title}</h3>
+              <h3 className="mt-4 font-mono text-sm uppercase tracking-wider text-foreground">
+                {s.title}
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
             </article>
           ))}
@@ -282,7 +410,10 @@ function Index() {
                 </div>
                 <ul className="mt-5 space-y-2.5">
                   {job.points.map((p, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
+                    <li
+                      key={i}
+                      className="flex gap-3 text-sm text-muted-foreground leading-relaxed"
+                    >
                       <ChevronRight className="size-4 text-primary shrink-0 mt-0.5" />
                       <span>{p}</span>
                     </li>
@@ -301,7 +432,10 @@ function Index() {
           <h2 className="mt-2 text-3xl font-semibold">Certifications</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-3">
             {certifications.map((c) => (
-              <div key={c} className="card-soc px-4 py-3 flex items-center gap-3 hover:border-accent/60 transition-colors">
+              <div
+                key={c}
+                className="card-soc px-4 py-3 flex items-center gap-3 hover:border-accent/60 transition-colors"
+              >
                 <Cpu className="size-4 text-accent shrink-0" />
                 <span className="text-sm">{c}</span>
               </div>
@@ -313,8 +447,16 @@ function Index() {
           <h2 className="mt-2 text-3xl font-semibold">Training & education</h2>
           <div className="mt-8 space-y-4">
             <EduCard title="SOC Analyst Internship" org="SIEM XPERT" period="Jun 2025 — Nov 2025" />
-            <EduCard title="Post-Graduate Diploma — Web & Mobile App Design and Development" org="Langara College · Vancouver, BC" period="Sep 2019 — Apr 2021" />
-            <EduCard title="B.Tech — Computer Science and Engineering" org="UIET, Kurukshetra University · India" period="Aug 2014 — May 2018" />
+            <EduCard
+              title="Post-Graduate Diploma — Web & Mobile App Design and Development"
+              org="Langara College · Vancouver, BC"
+              period="Sep 2019 — Apr 2021"
+            />
+            <EduCard
+              title="B.Tech — Computer Science and Engineering"
+              org="UIET, Kurukshetra University · India"
+              period="Aug 2014 — May 2018"
+            />
           </div>
         </div>
       </section>
@@ -327,12 +469,21 @@ function Index() {
             Need a steady set of eyes on your <span className="text-gradient">SOC queue?</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl">
-            Open to SOC Analyst, Security Analyst, and Threat Detection roles. Reach out — I reply within one business day.
+            Open to SOC Analyst, Security Analyst, and Threat Detection roles. Reach out — I reply
+            within one business day.
           </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-3 max-w-2xl">
-            <ContactLink icon={Mail} label="asaini@antrikshsaini.com" href="mailto:asaini@antrikshsaini.com" />
+            <ContactLink
+              icon={Mail}
+              label="asaini@antrikshsaini.com"
+              href="mailto:asaini@antrikshsaini.com"
+            />
             <ContactLink icon={Phone} label="+1 236 885 2126" href="tel:+12368852126" />
-            <ContactLink icon={Linkedin} label="linkedin.com/in/antriksh-saini" href="https://linkedin.com/in/antriksh-saini" />
+            <ContactLink
+              icon={Linkedin}
+              label="linkedin.com/in/antriksh-saini"
+              href="https://linkedin.com/in/antriksh-saini"
+            />
             <ContactLink icon={Globe} label="antrikshsaini.com" href="https://antrikshsaini.com" />
           </div>
         </div>
@@ -361,7 +512,15 @@ function EduCard({ title, org, period }: { title: string; org: string; period: s
   );
 }
 
-function ContactLink({ icon: Icon, label, href }: { icon: typeof Mail; label: string; href: string }) {
+function ContactLink({
+  icon: Icon,
+  label,
+  href,
+}: {
+  icon: typeof Mail;
+  label: string;
+  href: string;
+}) {
   return (
     <a
       href={href}
